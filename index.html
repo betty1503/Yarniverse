@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yarniverse - Handmade Crochet Creations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff5f7;
+        }
+        
+        .pink-gradient {
+            background: linear-gradient(135deg, #f9c1d5 0%, #fce4ec 100%);
+        }
+        
+        .item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .yarn-ball {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .yarn-ball-1 {
+            top: 10%;
+            left: 5%;
+            width: 100px;
+            height: 100px;
+        }
+        
+        .yarn-ball-2 {
+            bottom: 15%;
+            right: 5%;
+            width: 120px;
+            height: 120px;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Yarn decoration elements -->
+    <div class="yarn-ball yarn-ball-1">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" fill="#ec4899" />
+            <path d="M50,5 A45,45 0 0,1 95,50 A45,45 0 0,1 50,95 A45,45 0 0,1 5,50 A45,45 0 0,1 50,5 Z" fill="none" stroke="#f472b6" stroke-width="4" stroke-dasharray="10,5" />
+        </svg>
+    </div>
+    
+    <div class="yarn-ball yarn-ball-2">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" fill="#f472b6" />
+            <path d="M50,5 A45,45 0 0,1 95,50 A45,45 0 0,1 50,95 A45,45 0 0,1 5,50 A45,45 0 0,1 50,5 Z" fill="none" stroke="#ec4899" stroke-width="4" stroke-dasharray="8,8" />
+        </svg>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="pink-gradient sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-crochet text-3xl text-pink-700"></i>
+                    <h1 class="text-2xl font-bold text-pink-800">Yarniverse</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-pink-700 hover:text-pink-900 font-medium">Home</a>
+                    <a href="#products" class="text-pink-700 hover:text-pink-900 font-medium">Products</a>
+                    <a href="#about" class="text-pink-700 hover:text-pink-900 font-medium">About</a>
+                    <a href="#contact" class="text-pink-700 hover:text-pink-900 font-medium">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-pink-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+                <a href="#home" class="block px-3 py-2 rounded-md text-pink-700 hover:bg-pink-100">Home</a>
+                <a href="#products" class="block px-3 py-2 rounded-md text-pink-700 hover:bg-pink-100">Products</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-pink-700 hover:bg-pink-100">About</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-pink-700 hover:bg-pink-100">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pink-gradient py-20 px-6 relative overflow-hidden">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 relative z-10">
+                <h2 class="text-4xl md:text-5xl font-bold text-pink-900 mb-4">Handmade Crochet Creations</h2>
+                <p class="text-lg text-pink-800 mb-8">Each stitch made with love and care. Explore our collection of unique, cozy crochet items perfect for your wardrobe.</p>
+                <a href="#products" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-full inline-flex items-center transition duration-300">
+                    <span>Shop Now</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="md:w-1/2 relative z-10 flex justify-center">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-pink-200 rounded-full flex items-center justify-center shadow-xl">
+                        <img src="https://i.ibb.co/G4zjbsd5/IMG.jpg" 
+                             alt="Crochet items" 
+                             class="w-60 h-60 md:w-72 md:h-72 object-cover rounded-full border-4 border-white">
+                    </div>
+                    <div class="absolute -bottom-5 -right-5 bg-pink-100 rounded-full p-4 shadow-lg">
+                        <i class="fas fa-heart text-pink-600 text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-pink-800 mb-4">Our Crochet Collection</h2>
+                <p class="text-pink-600 max-w-2xl mx-auto">Each item is handmade with premium yarns and attention to detail.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="item-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 relative">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://i.ibb.co/7J2q6ZF8/IMG.jpg"
+                             alt="Crochet mesh cardigan" 
+                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            1500da
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-pink-800 mb-2">Crochet mesh cardigan</h3>
+                        <p class="text-gray-600 mb-4">embrace elegance and comfort with our cardigan, adorned with star decoration perfect for u to shine.</p>
+                        <div class="flex justify-between items-center">
+                            <button class="bg-pink-100 hover:bg-pink-200 text-pink-700 font-medium py-2 px-4 rounded-full transition duration-200">
+                                <i class="fas fa-shopping-cart mr-2"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="item-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 relative">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://i.ibb.co/S4gD0chV/IMG.png" 
+                             alt="Crochet cases" 
+                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            300da
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-pink-800 mb-2">crochet cases</h3>
+                        <p class="text-gray-600 mb-4">in diffrent colours, sizes and designs u can get our crochet cases for your makeup, glasses, pencels and all of your items.</p>
+                        <div class="flex justify-between items-center">
+                            <button class="bg-pink-100 hover:bg-pink-200 text-pink-700 font-medium py-2 px-4 rounded-full transition duration-200">
+                                <i class="fas fa-shopping-cart mr-2"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="item-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 relative">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://i.ibb.co/wFfqP06R/IMG.jpg" 
+                             alt="Crochet beanie scraf" 
+                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            1500da
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-pink-800 mb-2">Crochet Beanie scarf</h3>
+                        <p class="text-gray-600 mb-4">Stay warm in style with this crochet beanie scarf.</p>
+                        <div class="flex justify-between items-center">
+                            <button class="bg-pink-100 hover:bg-pink-200 text-pink-700 font-medium py-2 px-4 rounded-full transition duration-200">
+                                <i class="fas fa-shopping-cart mr-2"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="item-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 relative">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://i.ibb.co/HLfscw1Q/IMG.jpg" 
+                             alt="Crochet bow bag" 
+                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            1000da
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-pink-800 mb-2">crochet bow Bag</h3>
+                        <p class="text-gray-600 mb-4">cute shoulder bag adding elegance to your outfits.</p>
+                        <div class="flex justify-between items-center">
+                            <button class="bg-pink-100 hover:bg-pink-200 text-pink-700 font-medium py-2 px-4 rounded-full transition duration-200">
+                                <i class="fas fa-shopping-cart mr-2"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="item-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 relative">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://i.ibb.co/tp2hR1S9/IMG.jpg"
+                             alt="Crochet korumi" 
+                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            1200da
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-pink-800 mb-2">crochet korumi</h3>
+                        <p class="text-gray-600 mb-4">are u a kuri lover? searching for a gift to a friend? our crochet kuromi is the best option for u!(hight around 20cm)</p>
+                        <div class="flex justify-between items-center">
+                            <button class="bg-pink-100 hover:bg-pink-200 text-pink-700 font-medium py-2 px-4 rounded-full transition duration-200">
+                                <i class="fas fa-shopping-cart mr-2"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="item-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 relative">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://i.ibb.co/xK830LQG/IMG.jpg" 
+                             alt="Crochet keychains" 
+                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            (300-500)da
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-pink-800 mb-2">crochet keychains</h3>
+                        <p class="text-gray-600 mb-4">make your bags speceal with our custumised keychains!</p>
+                        <div class="flex justify-between items-center">
+                            <button class="bg-pink-100 hover:bg-pink-200 text-pink-700 font-medium py-2 px-4 rounded-full transition duration-200">
+                                <i class="fas fa-shopping-cart mr-2"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full inline-flex items-center transition duration-300">
+                    <span>View All Products</span>
+                    <i class="fas fa-chevron-down ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 bg-pink-50">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1610220941338-1d5f6c9f1e1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                         alt="Crocheting hands" 
+                         class="rounded-xl shadow-lg w-full h-auto max-h-96 object-cover">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-pink-800 mb-6">About Yarniverse</h2>
+                    <p class="text-gray-700 mb-4">Welcome to Yarniverse, where every stitch tells a story. I'm the creator behind these handmade crochet items. What started as a hobby quickly turned into a passion for creating beautiful, functional pieces.</p>
+                    <p class="text-gray-700 mb-4">Each item in my collection is made with high-quality yarns and careful attention to detail. I believe in sustainable crafting and use eco-friendly materials whenever possible.</p>
+                    <p class="text-gray-700 mb-6">When you purchase from Yarniverse, you're not just getting a handmade product - you're getting a piece made with love and care that will bring warmth and joy to your life.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                            <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+                            <span class="text-sm font-medium">Handmade with love</span>
+                        </div>
+                        <div class="flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                            <i class="fas fa-leaf text-pink-500 mr-2"></i>
+                            <span class="text-sm font-medium">Eco-friendly materials</span>
+                        </div>
+                        <div class="flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                            <i class="fas fa-star text-pink-500 mr-2"></i>
+                            <span class="text-sm font-medium">Unique designs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   <!-- Main Content -->
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-12">
+            <!-- Contact Form -->
+            <div class="w-full lg:w-1/2">
+                <form id="contactForm" class="bg-white rounded-lg p-8 form-shadow transition-all-slow hover:shadow-xl">
+                    <h2 class="text-2xl font-bold text-indigo-800 mb-6 text-center">Get in Touch</h2>
+                    
+                    <div class="mb-5">
+                        <label for="name" class="block text-gray-700 mb-2 font-medium">Full Name</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-user text-gray-400"></i>
+                            </div>
+                            <input type="text" id="name" placeholder="Your name" 
+                                class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all-slow">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-5">
+                        <label for="email" class="block text-gray-700 mb-2 font-medium">Email Address</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-envelope text-gray-400"></i>
+                            </div>
+                            <input type="email" id="email" placeholder="your.email@example.com" 
+                                class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all-slow">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-5">
+                        <label for="phone" class="block text-gray-700 mb-2 font-medium">Phone Number (Optional)</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-phone text-gray-400"></i>
+                            </div>
+                            <input type="tel" id="phone" placeholder="+1 234 567 890" 
+                                class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all-slow">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-5">
+                        <label for="subject" class="block text-gray-700 mb-2 font-medium">Subject</label>
+                        <select id="subject" 
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all-slow">
+                            <option value="" disabled selected>Select a topic</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="product">Product Questions</option>
+                            <option value="order">Order Status</option>
+                            <option value="custom">Custom Yarn Request</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-5">
+                        <label for="message" class="block text-gray-700 mb-2 font-medium">Your Message</label>
+                        <div class="relative">
+                            <div class="absolute top-3 left-3">
+                                <i class="fas fa-comment-dots text-gray-400"></i>
+                            </div>
+                            <textarea id="message" rows="5" placeholder="How can we help you?" 
+                                class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all-slow"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" id="submitBtn" 
+                        class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg shadow-md animate-bounce-hover transition-all-slow">
+                        Send Message <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="w-full lg:w-1/2">
+                <div class="bg-indigo-50 border-2 border-indigo-100 rounded-lg p-8 form-shadow">
+                    <h2 class="text-2xl font-bold text-indigo-800 mb-6 text-center">Or dm on our ig page"yarniverse.1"</h2>
+                    
+                   
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center">
+            <div class="bg-green-100 p-4 rounded-full inline-block mb-4">
+                <i class="fas fa-check-circle text-green-600 text-4xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-green-800 mb-3">Message Sent!</h2>
+            <p class="text-gray-600 mb-6">Thank you for contacting Yarniverse. We've received your message and will get back to you soon.</p>
+            <button id="closeModal" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg transition-all-slow">
+                Wonderful!
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields.');
+                </html>
